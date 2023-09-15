@@ -57,9 +57,9 @@ You can do steps 2 and 3 in one command:
 The following is a flowchart representing the primary functions and flow of the application:
 
 ```mermaid
-flowchart LR
+flowchart TD
 
-A[UserInput] --> B
+A[UserInput] --> main
 
 subgraph main["main() Function"]
 direction LR
@@ -68,18 +68,28 @@ direction LR
 end
 
 subgraph parseFlightRequest["parseFlightRequest() Function"]
-direction RL
+direction LR
     D[Parse JSON Input] --> E
     E[Valid ICAO Format?]
 end
 
 subgraph getFlightData["getFlightData() Function"]
-direction RL
+direction LR
     F[Send Request to Aviation Stack API] --> G
     G[Got Valid Flight Response?]
 end
 
-main --> parseFlightRequest --> getFlightData
+H[Display Flight Details]
+
+Z[Return Appropriate Error]
+
+main --> parseFlightRequest --> getFlightData --> H
+
+main --> Z
+
+parseFlightRequest --> Z
+
+getFlightData --> Z
 ```
 
 ## Running the Tests
