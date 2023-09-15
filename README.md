@@ -34,9 +34,9 @@ This simple Go application fetches and displays flight information based on the 
 Replace `YOUR_ICAO` with the desired ICAO number.
 
 You can do steps 2 and 3 in one command:
-    ```bash
-    export AVIATION_KEY=your_api_key_here && go run main.go '{"icao":"YOUR_ICAO"}'
-    ```
+   ```bash
+   export AVIATION_KEY=your_api_key_here && go run main.go '{"icao":"YOUR_ICAO"}'
+   ```
 
 ## Code Structure
 
