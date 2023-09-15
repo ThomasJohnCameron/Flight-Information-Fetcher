@@ -83,6 +83,8 @@ H[Display Flight Details]
 
 Z[Return Appropriate Error]
 
+F[Display Input]
+
 main --> parseFlightRequest --> getFlightData --> H
 
 main --> Z
@@ -90,6 +92,8 @@ main --> Z
 parseFlightRequest --> Z
 
 getFlightData --> Z
+
+main --> DisplayInput
 ```
 
 ## Running the Tests
